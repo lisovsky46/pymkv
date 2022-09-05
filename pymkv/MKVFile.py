@@ -87,7 +87,7 @@ class MKVFile:
         self._global_tags_file = None
         self._link_to_previous_file = None
         self._link_to_next_file = None
-        self.tracks = []
+        self.tracks = list[MKVTrack]()
         self.attachments = []
         if file_path is not None and not verify_mkvmerge(mkvmerge_path=self.mkvmerge_path):
             raise FileNotFoundError('mkvmerge is not at the specified path, add it there or change the mkvmerge_path '
